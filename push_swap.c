@@ -50,6 +50,8 @@ int main(int argc, char **args)
 		list_to_struct(args, &pile_adress, &intel);
 	}
 	ft_printf(YELLOW"stack_intel test 1 = %i\n"RESET, intel.value);
+	// _________________  TESTS POST INIT  __________________________
+	//
 	// ft_printf(RED"pile->pile_a[len_a] = %i\npile->pile_a[len_a - 1] = %i\n"RESET, pile_adress.pile_a[pile_adress.len_a], pile_adress.pile_a[pile_adress.len_a - 1]);
 	// int i;
 	// i = -1;
@@ -58,8 +60,18 @@ int main(int argc, char **args)
 	// ft_printf("A pile          B pile\n");
 	// ft_printf(BLUE"In push_swap origin"RESET"\npile->len_a = %i\npile->len_b = %i\n", pile_adress.len_a, pile_adress.len_b);
 	sa (&pile_adress);
-	
+	// _________________  TESTS POST SA  __________________________
+	// ft_printf(RED"pile->pile_a[len_a] = %i\npile->pile_a[len_a - 1] = %i\n"RESET, pile_adress.pile_a[pile_adress.len_a], pile_adress.pile_a[pile_adress.len_a - 1]);
+	// i = -1;
+	// while (pile_adress.pile_a[++i])
+	// 	ft_printf("%i               %i\n", pile_adress.pile_a[i], pile_adress.pile_b[i]);
+	// ft_printf("A pile          B pile\n");
+	// ft_printf("len_a = %i\nlen_b = %i\n\n", pile_adress.len_a, pile_adress.len_b);
+	// ft_printf("pile_a[len_a - 1] = %i\n", pile_adress.pile_a[pile_adress.len_a - 1]);
+
 	pb (&pile_adress);
+	// _________________  TESTS POST PB  __________________________
+	//
 	// ft_printf(RED"pile->pile_a[len_a] = %i\npile->pile_a[len_a - 1] = %i\n"RESET, pile_adress.pile_a[pile_adress.len_a], pile_adress.pile_a[pile_adress.len_a - 1]);
 	// i = -1;
 	// while (pile_adress.pile_a[++i])
@@ -68,6 +80,8 @@ int main(int argc, char **args)
 	// ft_printf("len_a = %i\nlen_b = %i\n\n", pile_adress.len_a, pile_adress.len_b);
 	// ft_printf("pile_a[len_a - 1] = %i\n", pile_adress.pile_a[pile_adress.len_a - 1]);
 	ss (&pile_adress);
+	// _________________  TESTS POST SS  __________________________
+	//
 	// ft_printf(RED"pile->pile_a[len_a] = %i\npile->pile_a[len_a - 1] = %i\n"RESET, pile_adress.pile_a[pile_adress.len_a], pile_adress.pile_a[pile_adress.len_a - 1]);
 	// i = -1;
 	// while (pile_adress.pile_a[++i])
@@ -76,6 +90,8 @@ int main(int argc, char **args)
 	// ft_printf("len_a = %i\nlen_b = %i\n\n", pile_adress.len_a, pile_adress.len_b);
 
 	pa (&pile_adress);
+	// _________________  TESTS POST PA  __________________________
+	//
 	// ft_printf(RED"pile->pile_a[len_a] = %i\npile->pile_a[len_a - 1] = %i\n"RESET, pile_adress.pile_a[pile_adress.len_a], pile_adress.pile_a[pile_adress.len_a - 1]);
 	// ft_printf(RED"pile->pile_a[0] = %i\npile->pile_a[1] = %i\n"RESET, pile_adress.pile_a[0], pile_adress.pile_a[1]);
 	// ft_printf(RED"pile->pile_b[0] = %i\npile->pile_b[1] = %i\n"RESET, pile_adress.pile_b[0], pile_adress.pile_b[1]);

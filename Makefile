@@ -40,10 +40,10 @@ all: $(LIBFT) $(OBJS) $(NAME)
 
 %.o: %.c
 	@echo -n "$(BLUE) $@ $(RESET)"
-	@cc $(CFLAGS) -I . $< -c -o $@ && echo "$(GREEN)>>> SUCCESS $(RESET)" || { echo "$(ERROR_MSG)"; exit 1; }
+	@gcc $(CFLAGS) -I . $< -c -o $@ && echo "$(GREEN)>>> SUCCESS $(RESET)" || { echo "$(ERROR_MSG)"; exit 1; }
 
 $(NAME): $(OBJS) $(LIBFT_A)
-	@cc $(CFLAGS) $(OBJS) -o $(NAME) -L$(LIBFT_DIR) -lft
+	@gcc $(CFLAGS) $(OBJS) -o $(NAME) -L$(LIBFT_DIR) -lft
 	@echo "$(GREEN)======================= All push_swap required library has been compiled =======================$(RESET)"
 
 $(LIBFT_A):
