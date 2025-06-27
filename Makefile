@@ -1,67 +1,87 @@
-# MANQUE  :
-#       SUPPRIMER LIBFT.A DU DOSSIER COURANT
-#           "     LIBFT.H DU DOSSIER COURANT
-
 .PHONY: all clean fclean re
 
-# General 
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
 
-#___________ SRCS _____________
+# _____________________  SRCS  __________________________
 
-# LIBFT
-LIBFT_DIR = includes/libft/
-LIBFT_A = includes/libft/libft.a
+# libft files
+LIBFT_A = libft.a
+LIBFT_H = libft.h
 
-SRC = push_swap.c\
-	includes/checking/is_valid_int_list.c\
-	includes/checking/has_no_double.c\
-	includes/checking/is_signed_int.c\
-	includes/checking/is_valid_int.c\
-	includes/checking/ft_isdigit2.c\
-	includes/tools/ft_strcpy.c\
-	includes/tools/ft_strswap.c\
-	includes/ft_atol.c\
-	includes/parsing/list_to_struct.c\
-	includes/sorting/swap/sa.c\
-	includes/sorting/swap/sb.c\
-	includes/sorting/swap/ss.c\
-	includes/sorting/push/pb.c\
-	includes/sorting/push/pa.c\
+# libft dir
+LIBFT_DIR = srcs/libft/
 
+# p_swap file
 
-OBJS = $(SRC:.c=.o)
+P_SWAP_H = includes/push_swap.h
+P_SWAP_MAIN = srcs/push_swap.c
+
+# pswap dir
+
+INC_DIR = includes/
+PSWAP_PARS = 	srcs/pars/is_valid_int_list.c\
+				srcs/pars/init_pile.c\
+				srcs/pars/ft_push.c\
+# PSWAP_CHECK
+# PSWAP_SORT
+PSWAP_ERROR = srcs/error/exit_error.c\
+
+# Define the source files
+SRCS = $(P_SWAP_MAIN) $(PSWAP_PARS) $(PSWAP_ERROR)
 
 # Setting up an custom error message
 ERROR_MSG = "$(RED)[ERROR] Compilation failed$(RESET)"
 
-all: $(LIBFT) $(OBJS) $(NAME)
+# This will create a list of object files from the list of source files
+OBJS_DIR = .objs/
+OBJS = $(addprefix $(OBJS_DIR), $(SRCS:.c=.o))
 
-%.o: %.c
-	@echo -n "$(BLUE) $@ $(RESET)"
-	@gcc $(CFLAGS) -I . $< -c -o $@ && echo "$(GREEN)>>> SUCCESS $(RESET)" || { echo "$(ERROR_MSG)"; exit 1; }
+all: $(NAME)
+# Check source files
+check_sources:
+	@for file in $(SRCS); do \
+		if [ ! -f $$file ]; then \
+			echo "$(RED)[ERROR] Le fichier $$file est manquant ou introuvable. Vérifiez que tous les fichiers source sont présents. $(RESET)"; \
+			exit 1; \
+		fi; \
+	done
 
-$(NAME): $(OBJS) $(LIBFT_A)
-	@gcc $(CFLAGS) $(OBJS) -o $(NAME) -L$(LIBFT_DIR) -lft
-	@echo "$(GREEN)======================= All push_swap required library has been compiled =======================$(RESET)"
 
-$(LIBFT_A):
+# Compile the object files
+$(OBJS_DIR)%.o: %.c
+	@mkdir -p $(dir $@)
+	@echo -n "$(BLUE)$(notdir $@) $(RESET)"
+	@gcc $(CFLAGS) -I $(INC_DIR) $< -c -o $@ && echo "$(GREEN)>>> SUCCESS $(RESET)" || { echo "$(ERROR_MSG)"; exit 1; }
+
+# Create lib with ar rc
+${NAME}: check_sources ${LIBFT_A} ${OBJS}
+	@gcc ${CFLAGS} ${OBJS} $(LIBFT_DIR)$(LIBFT_A) -o $(NAME) || { echo "$(ERROR_MSG)"; exit 1; }
+	@echo "$(GREEN)======================= All push_swap function has been compiled =======================$(RESET)"
+
+# Get libft
+$(LIBFT_A): force
 	@echo "$(YELLOW)1/  Building libft..............................................................................$(RESET)"
 	@$(MAKE) -C $(LIBFT_DIR) --no-print-directory || @echo "Issue while attempting compiling libft"
-	@cp $(LIBFT_DIR)libft.a ./ && cp $(LIBFT_DIR)libft.h ./
+	@cp $(LIBFT_DIR)$(LIBFT_H) $(INC_DIR) && cp $(LIBFT_DIR)ansi_format.h $(INC_DIR)
 
+# Use to force libft to relink if something has changed within
+force:
+
+# Clean it all up
 clean:
-	@cd $(LIBFT_DIR) && $(MAKE) --no-print-directory clean
-	@rm -f $(OBJS)
+	- mv $(INC_DIR)$(LIBFT_H) $(OBJS_DIR) 
+	@rm -rf $(OBJS_DIR) && echo "$(YELLOW)======================= All object files has been removed =======================$(RESET)"
 
 fclean: clean
-	@cd $(LIBFT_DIR) && $(MAKE) --no-print-directory fclean
-	@rm -f $(NAME)
+	@rm -f  $(NAME) && echo "$(YELLOW)======================= $(NAME) has been removed =======================$(RESET)"
 
 re: fclean all
+	@echo "$(GREEN)======================= $(NAME) has been recompiled =======================$(RESET)"
 
-# __________________ Color codes ___________________________
+debug: 
+CFLAGS += -g3
+# ________________ Color codes ________________________
 
 RESET      = \033[0m
 RED        = \033[31m
