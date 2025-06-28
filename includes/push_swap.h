@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 19:34:38 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/06/27 17:32:26 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/06/28 02:21:57 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@
 
 typedef struct s_piles
 {
-	size_t	len_a;
-	size_t	len_b;
+	int		len_a;
+	int		len_b;
+	int		maxlen;
 	int		*pile_a;
 	int		*pile_b;
-	int		max;
 	int		min;
 }			t_piles;
 
@@ -46,8 +46,23 @@ typedef struct s_piles
  *@brief check if list is valid
  *
 */
-int	is_valid_int_list(char **pile_base, int argc);
-int	init_pile(char **args, t_piles *piles);
-int	exit_error(char *error_msg);
-int	ft_push(char *to_add, t_piles *piles, int len);
+int		is_valid_int_list(char **pile_base, int argc);
+int		init_pile(char **args, t_piles *piles, int argc);
+void	print_pile_A(t_piles *piles);
+void	print_pile_B(t_piles *piles);
+int		exit_error(char *error_msg);
+
+void	swap_A(t_piles *piles);
+void	swap_B(t_piles *piles);
+void	double_swap(t_piles *piles);
+
+void	push_A(int value, t_piles *piles);
+void	push_B(int value, t_piles *piles);
+
+void	rotate_A(t_piles *piles);
+void	rotate_B(t_piles *piles);
+void	reverse_rotate_A(t_piles *piles);
+void	reverse_rotate_B(t_piles *piles);
+void	double_reverse(t_piles *piles);
+
 #endif

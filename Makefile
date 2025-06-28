@@ -22,13 +22,16 @@ P_SWAP_MAIN = srcs/push_swap.c
 INC_DIR = includes/
 PSWAP_PARS = 	srcs/pars/is_valid_int_list.c\
 				srcs/pars/init_pile.c\
-				srcs/pars/ft_push.c\
 # PSWAP_CHECK
-# PSWAP_SORT
 PSWAP_ERROR = srcs/error/exit_error.c\
 
+PSWAP_SORT = 	srcs/sort/ft_push.c\
+				srcs/sort/ft_swap.c\
+				srcs/sort/ft_reverse_rotate.c\
+				srcs/sort/ft_rotate.c\
+
 # Define the source files
-SRCS = $(P_SWAP_MAIN) $(PSWAP_PARS) $(PSWAP_ERROR)
+SRCS = $(P_SWAP_MAIN) $(PSWAP_PARS) $(PSWAP_ERROR) $(PSWAP_SORT)
 
 # Setting up an custom error message
 ERROR_MSG = "$(RED)[ERROR] Compilation failed$(RESET)"
@@ -43,10 +46,8 @@ check_sources:
 	@for file in $(SRCS); do \
 		if [ ! -f $$file ]; then \
 			echo "$(RED)[ERROR] Le fichier $$file est manquant ou introuvable. Vérifiez que tous les fichiers source sont présents. $(RESET)"; \
-			exit 1; \
 		fi; \
 	done
-
 
 # Compile the object files
 $(OBJS_DIR)%.o: %.c

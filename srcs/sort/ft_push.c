@@ -6,13 +6,13 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 04:28:22 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/06/27 23:24:47 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/06/28 01:01:43 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-void	ft_push_A(int value, t_piles *piles)
+void	push_A(int value, t_piles *piles)
 {
 	ft_printf(YELLOW"ft_push is here\n"RESET);
 	ft_printf(BLUE"pile_max = "RESET" %d      ----      "BLUE"Longueur de la pile : "RESET"%d\n", piles->maxlen, piles->len_a);
@@ -25,9 +25,18 @@ void	ft_push_A(int value, t_piles *piles)
 	ft_printf(GREEN"PA\n"RESET);
 }
 
+void	push_B(int value, t_piles *piles)
+{
+	ft_printf(YELLOW"ft_push is here\n"RESET);
+	ft_printf(BLUE"pile_max = "RESET" %d      ----      "BLUE"Longueur de la pile : "RESET"%d\n", piles->maxlen, piles->len_b);
 
-
-
+	if (piles->len_b > piles->maxlen)
+		exit_error("La pile est pleine, impossible de pousser un nouvel élément.\n");
+	ft_memmove(piles->pile_b + 1, piles->pile_b, sizeof(int) * piles->len_b);
+	piles->pile_b[0] = value;
+	piles->len_b++;
+	ft_printf(GREEN"PB\n"RESET);
+}
 
 
 

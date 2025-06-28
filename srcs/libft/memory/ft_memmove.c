@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 01:03:30 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/01/05 22:12:51 by codespace        ###   ########.fr       */
+/*   Updated: 2025/06/27 22:55:15 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			i++;
 		}
 	}
+	ft_printf(GREEN"memmove reachs the end\n"RESET);
+
 	return (dest);
 }

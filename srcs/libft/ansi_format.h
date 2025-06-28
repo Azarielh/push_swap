@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 23:02:31 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/06/25 23:05:13 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/06/28 00:22:32 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@
 # define GREEN "\x1b[32m"
 # define YELLOW "\x1b[33m"
 # define BLUE "\x1b[34m"
+# define ORANGE "\033[38;5;214m"
 
 #endif
