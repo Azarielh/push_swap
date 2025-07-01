@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 19:34:38 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/06/28 02:21:57 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/06/29 08:33:19 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@
 # include <limits.h>
 # include "./libft.h"
 
+# define TRUE 1
+# define FALSE 0
+
 typedef struct s_piles
 {
 	int		len_a;
@@ -39,6 +42,7 @@ typedef struct s_piles
 	int		maxlen;
 	int		*pile_a;
 	int		*pile_b;
+	int		max;
 	int		min;
 }			t_piles;
 
@@ -47,22 +51,29 @@ typedef struct s_piles
  *
 */
 int		is_valid_int_list(char **pile_base, int argc);
+int		is_sorted(t_piles *piles);
 int		init_pile(char **args, t_piles *piles, int argc);
-void	print_pile_A(t_piles *piles);
-void	print_pile_B(t_piles *piles);
+void	print_pile_a(t_piles *piles);
+void	print_pile_b(t_piles *piles);
 int		exit_error(char *error_msg);
 
-void	swap_A(t_piles *piles);
-void	swap_B(t_piles *piles);
+void	exception_handler(int argc, t_piles *piles);
+
+void	swap_a(t_piles *piles);
+void	swap_b(t_piles *piles);
 void	double_swap(t_piles *piles);
 
-void	push_A(int value, t_piles *piles);
-void	push_B(int value, t_piles *piles);
+void	push_a(int value, t_piles *piles, int do_print);
+void	push_b(int value, t_piles *piles);
 
-void	rotate_A(t_piles *piles);
-void	rotate_B(t_piles *piles);
-void	reverse_rotate_A(t_piles *piles);
-void	reverse_rotate_B(t_piles *piles);
+void	rotate_a(t_piles *piles);
+void	rotate_b(t_piles *piles);
+void	reverse_rotate_a(t_piles *piles);
+void	reverse_rotate_b(t_piles *piles);
 void	double_reverse(t_piles *piles);
+
+void	sort_three(t_piles *piles);
+int		get_highest_pos(t_piles *piles);
+int		get_lowest_pos(t_piles *piles);
 
 #endif

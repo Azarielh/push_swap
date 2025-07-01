@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 12:19:21 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/06/27 18:11:18 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/06/29 04:05:45 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,9 @@ int				ft_isdigit(int c);
  *		Detect if the given string is signed int or not
  *
  * @param *str The string to go through.
- * @return 	1 if *str is a number
- *			0 otherwise.
+ *
+ * @return 	1 if true
+ *			0 if false
  */
 int				ft_isnumber(char *str);
 
@@ -162,7 +163,7 @@ ________________________________________________________________________________
  *
  * @return The integer value of the string.
  */
-int				ft_atoi(const char *str);
+long			ft_atoi(const char *str);
 
 /**
  * @brief Converts a string to a long.

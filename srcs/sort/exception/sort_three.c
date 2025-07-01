@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ansi_format.h                                      :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 23:02:31 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/06/29 06:46:08 by jlacaze-         ###   ########.fr       */
+/*   Created: 2025/06/29 05:18:14 by jlacaze-          #+#    #+#             */
+/*   Updated: 2025/07/01 16:36:45 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANSI_FORMAT_H
-# define ANSI_FORMAT_H
-# define RESET "\x1b[0m"
-# define RED "\x1b[31m"
-# define GREEN "\x1b[32m"
-# define YELLOW "\x1b[33m"
-# define BLUE "\x1b[34m"
-# define ORANGE "\033[38;5;214m"
-# define CYAN_LIGHT "\033[38;5;87m"
+#include "../../../includes/push_swap.h"
 
-#endif
+void	sort_three(t_piles *piles)
+{
+	int	h_pos;
+	int	l_pos;
+	int	i;
+
+	h_pos = get_highest_pos(piles);
+	l_pos = get_lowest_pos(piles);
+	if ((h_pos == 0 && l_pos == 2) || (h_pos == 2 && l_pos == 0))
+		rotate_a(piles);
+	if ()
+}

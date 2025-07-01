@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 02:36:18 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/06/27 18:17:46 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/06/29 03:28:22 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include <stdint.h>
 #include <stdio.h>
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
-	long long	result;
+	long		result;
 	int			sign;
 	int			i;
 
@@ -37,5 +37,5 @@ int	ft_atoi(const char *str)
 			return (-1);
 		result = result * 10 + (str[i++] - '0');
 	}
-	return ((int)(result * sign));
+	return ((long)(result * sign));
 }

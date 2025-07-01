@@ -1,4 +1,4 @@
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re force
 
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
@@ -22,32 +22,43 @@ P_SWAP_MAIN = srcs/push_swap.c
 INC_DIR = includes/
 PSWAP_PARS = 	srcs/pars/is_valid_int_list.c\
 				srcs/pars/init_pile.c\
-# PSWAP_CHECK
-PSWAP_ERROR = srcs/error/exit_error.c\
+				srcs/pars/get_highest.c\
+				srcs/pars/get_lowest.c
 
-PSWAP_SORT = 	srcs/sort/ft_push.c\
+# PSWAP_TOOLS
+PSWAP_PRINT = srcs/error/print_stuff.c\
+
+PSWAP_SORT = 	srcs/sort/is_sorted.c\
+				srcs/sort/ft_push.c\
 				srcs/sort/ft_swap.c\
 				srcs/sort/ft_reverse_rotate.c\
 				srcs/sort/ft_rotate.c\
+				srcs/sort/exception/exception_handler.c\
+				srcs/sort/exception/sort_three.c\
 
 # Define the source files
-SRCS = $(P_SWAP_MAIN) $(PSWAP_PARS) $(PSWAP_ERROR) $(PSWAP_SORT)
+SRCS = $(P_SWAP_MAIN) $(PSWAP_PARS) $(PSWAP_PRINT) $(PSWAP_SORT)
 
-# Setting up an custom error message
-ERROR_MSG = "$(RED)[ERROR] Compilation failed$(RESET)"
+# _____________________  DEFINE OBJECT DESTINATION  __________________________
 
 # This will create a list of object files from the list of source files
 OBJS_DIR = .objs/
 OBJS = $(addprefix $(OBJS_DIR), $(SRCS:.c=.o))
 
-all: $(NAME)
+# _____________________  SRCS  __________________________
+
+# Setting up an custom error message
+COMPIL_ERROR = "$(RED)[ERROR] Compilation failed$(RESET)"
+MISSING_FILE = "est manquant ou introuvable. Vérifiez que tous les fichiers source sont présents."
 # Check source files
 check_sources:
 	@for file in $(SRCS); do \
 		if [ ! -f $$file ]; then \
-			echo "$(RED)[ERROR] Le fichier $$file est manquant ou introuvable. Vérifiez que tous les fichiers source sont présents. $(RESET)"; \
+			echo "$(RED)[ERROR] Le fichier $$file $(MISSING_FILE) $(RESET)"; \
 		fi; \
 	done
+
+all: check_sources $(NAME)
 
 # Compile the object files
 $(OBJS_DIR)%.o: %.c
@@ -79,9 +90,9 @@ fclean: clean
 
 re: fclean all
 	@echo "$(GREEN)======================= $(NAME) has been recompiled =======================$(RESET)"
-
+# Ajouter la cmd de mke dans la regle debug et changer la valeur de variable de flags a cet endroit là
 debug: 
-CFLAGS += -g3
+	CFLAGS += -g3
 # ________________ Color codes ________________________
 
 RESET      = \033[0m

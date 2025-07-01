@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ansi_format.h                                      :+:      :+:    :+:   */
+/*   exception_handler.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 23:02:31 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/06/29 06:46:08 by jlacaze-         ###   ########.fr       */
+/*   Created: 2025/06/29 04:38:59 by jlacaze-          #+#    #+#             */
+/*   Updated: 2025/06/29 07:10:06 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANSI_FORMAT_H
-# define ANSI_FORMAT_H
-# define RESET "\x1b[0m"
-# define RED "\x1b[31m"
-# define GREEN "\x1b[32m"
-# define YELLOW "\x1b[33m"
-# define BLUE "\x1b[34m"
-# define ORANGE "\033[38;5;214m"
-# define CYAN_LIGHT "\033[38;5;87m"
+#include "../../../includes/push_swap.h"
 
-#endif
+void	exception_handler(int argc, t_piles *piles)
+{
+	ft_printf(YELLOW"exception handler is here\n");
+	argc--;
+
+	if (argc == 2 && piles->pile_a[0] > piles->pile_a[1])
+		swap_a(piles);
+	if (argc == 3)
+		sort_three (piles);
+	if (argc == 4)
+		return ;// create function that manage this case
+	if (argc == 5)
+		return ;// create function that manage this case
+	return ;
+}

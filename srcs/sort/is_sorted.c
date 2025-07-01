@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ansi_format.h                                      :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 23:02:31 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/06/29 06:46:08 by jlacaze-         ###   ########.fr       */
+/*   Created: 2025/06/29 07:11:10 by jlacaze-          #+#    #+#             */
+/*   Updated: 2025/06/30 02:50:52 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANSI_FORMAT_H
-# define ANSI_FORMAT_H
-# define RESET "\x1b[0m"
-# define RED "\x1b[31m"
-# define GREEN "\x1b[32m"
-# define YELLOW "\x1b[33m"
-# define BLUE "\x1b[34m"
-# define ORANGE "\033[38;5;214m"
-# define CYAN_LIGHT "\033[38;5;87m"
+#include "../../includes/push_swap.h"
 
-#endif
+int	is_sorted(t_piles *piles)
+{
+	int	i;
+
+	i = -1;
+	while (++i < piles->len_a - 1)
+		if (piles->pile_a[i] >= piles->pile_a[i + 1])
+			return (TRUE);
+	return (FALSE);
+}

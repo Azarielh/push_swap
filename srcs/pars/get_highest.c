@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit_error.c                                       :+:      :+:    :+:   */
+/*   get_highest.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/27 03:33:55 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/06/27 14:56:51 by jlacaze-         ###   ########.fr       */
+/*   Created: 2025/06/29 06:05:38 by jlacaze-          #+#    #+#             */
+/*   Updated: 2025/06/29 07:00:25 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	exit_error(char *error_msg)
+int		get_highest_pos (t_piles *piles)
 {
-	ft_printf(RED"Error :"RESET" %s\n", error_msg);
-	exit (EXIT_FAILURE);
+	int	i;
+	int	highest;
+
+	i = -1;
+	highest = 0;
+	while (piles->pile_a[++i])
+	{
+		if (highest < piles->pile_a[i])
+			highest = piles->pile_a[i];
+	}
+	piles->max = highest;
+	ft_printf(ORANGE"highest = %d\n"RESET, highest);
+	return (i - 1);
 }

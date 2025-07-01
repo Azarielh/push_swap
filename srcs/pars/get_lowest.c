@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   get_lowest.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 01:03:30 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/06/28 22:28:19 by jlacaze-         ###   ########.fr       */
+/*   Created: 2025/06/29 06:25:09 by jlacaze-          #+#    #+#             */
+/*   Updated: 2025/06/29 08:00:37 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/push_swap.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+int		get_lowest_pos(t_piles *piles)
 {
-	size_t	i;
+	int	i;
+	int	lowest;
 
-	if (!dest && !src)
-		return (0);
-	i = 0;
-	if (dest > src || (char *)dest >= (char *)src + n)
+	i = -1;
+	lowest = 0;
+	while (piles->pile_a[++i])
 	{
-		while (n > 0)
-		{
-			((unsigned char *)dest)[n - 1] = ((const unsigned char *)src)[n
-				- 1];
-			n--;
-		}
+		if (lowest > piles->pile_a[i])
+			lowest = piles->pile_a[i];
 	}
-	else
-	{
-		while (i < n)
-		{
-			((unsigned char *)dest)[i] = ((const unsigned char *)src)[i];
-			i++;
-		}
-	}
-	return (dest);
+	piles->min = lowest;
+	ft_printf(CYAN_LIGHT"lowest = %d\n"RESET, lowest);
+	return (i - 1);
 }
