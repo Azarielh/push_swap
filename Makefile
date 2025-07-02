@@ -35,6 +35,7 @@ PSWAP_SORT = 	srcs/sort/is_sorted.c\
 				srcs/sort/ft_rotate.c\
 				srcs/sort/exception/exception_handler.c\
 				srcs/sort/exception/sort_three.c\
+				srcs/sort/exception/sort_four.c\
 
 # Define the source files
 SRCS = $(P_SWAP_MAIN) $(PSWAP_PARS) $(PSWAP_PRINT) $(PSWAP_SORT)
@@ -51,14 +52,14 @@ OBJS = $(addprefix $(OBJS_DIR), $(SRCS:.c=.o))
 COMPIL_ERROR = "$(RED)[ERROR] Compilation failed$(RESET)"
 MISSING_FILE = "est manquant ou introuvable. Vérifiez que tous les fichiers source sont présents."
 # Check source files
+all: check_sources $(NAME)
+
 check_sources:
 	@for file in $(SRCS); do \
 		if [ ! -f $$file ]; then \
 			echo "$(RED)[ERROR] Le fichier $$file $(MISSING_FILE) $(RESET)"; \
 		fi; \
 	done
-
-all: check_sources $(NAME)
 
 # Compile the object files
 $(OBJS_DIR)%.o: %.c
@@ -91,8 +92,9 @@ fclean: clean
 re: fclean all
 	@echo "$(GREEN)======================= $(NAME) has been recompiled =======================$(RESET)"
 # Ajouter la cmd de mke dans la regle debug et changer la valeur de variable de flags a cet endroit là
-debug: 
-	CFLAGS += -g3
+
+debug: CFLAGS += -g3
+debug: re
 # ________________ Color codes ________________________
 
 RESET      = \033[0m

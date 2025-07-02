@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 19:34:38 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/06/29 08:33:19 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/02 01:07:25 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,20 +59,21 @@ int		exit_error(char *error_msg);
 
 void	exception_handler(int argc, t_piles *piles);
 
-void	swap_a(t_piles *piles);
-void	swap_b(t_piles *piles);
+void	swap_a(t_piles *piles, int do_print);
+void	swap_b(t_piles *piles, int do_print);
 void	double_swap(t_piles *piles);
 
 void	push_a(int value, t_piles *piles, int do_print);
 void	push_b(int value, t_piles *piles);
 
-void	rotate_a(t_piles *piles);
-void	rotate_b(t_piles *piles);
-void	reverse_rotate_a(t_piles *piles);
-void	reverse_rotate_b(t_piles *piles);
+void	rotate_a(t_piles *piles, int do_print);
+void	rotate_b(t_piles *piles, int do_print);
+void	reverse_rotate_a(t_piles *piles, int do_print);
+void	reverse_rotate_b(t_piles *piles, int do_print);
 void	double_reverse(t_piles *piles);
 
 void	sort_three(t_piles *piles);
+void	sort_four(t_piles *piles);
 int		get_highest_pos(t_piles *piles);
 int		get_lowest_pos(t_piles *piles);
 

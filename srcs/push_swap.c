@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 19:34:51 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/06/30 02:45:37 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/02 01:45:03 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int	main(int argc, char **pile_base)
 	init_pile(pile_base++, &piles, argc - 1);
 	if (!is_sorted(&piles))
 		return (0);
-	if (argc < 5)
+	ft_printf("main : argc = %d\n", argc);
+	if (argc < 6)
 		exception_handler(argc, &piles);
 
 	print_pile_a(&piles);

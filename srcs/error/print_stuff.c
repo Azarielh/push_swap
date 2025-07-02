@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 03:33:55 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/06/28 22:29:47 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/01 22:23:09 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	exit_error(char *error_msg)
 
 void print_pile_a(t_piles *piles)
 {
+	ft_printf("print_pile a is here.\n");
+
 	if (piles->pile_a == NULL)
 	{
 		ft_printf("pile a is empty.\n");
