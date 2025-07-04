@@ -21,37 +21,25 @@ void	sort_four(t_piles *piles)
 	h_pos = get_highest_pos(piles);
 	l_pos = get_lowest_pos(piles);
 
-	if (h_pos == 0)
+	if (l_pos == 0)
 	{
-		if (l_pos == 1 && piles->pile_a[2] < piles->pile_a[3])
-			reverse_rotate_a(piles, TRUE);
-		if (l_pos == 1 && piles->pile_a[2] > piles->pile_a[3])
-		{
-			reverse_rotate_a(piles, TRUE);
-			swap_a(piles, TRUE);
-			rotate_a(piles, TRUE);
-			swap_a(piles, TRUE);
-		}
-		if (l_pos == 2 && piles->pile_a[1] < piles->pile_a[3])
-		{
-			rotate_a(piles, TRUE);
-			swap_a(piles, TRUE);
-		}
-		if (l_pos == 2 && piles->pile_a[1] > piles->pile_a[3])
-		{
-			swap_a(piles, TRUE);
-			rotate_a(piles, TRUE);
-			rotate_a(piles, TRUE);
-		}
-		if (l_pos == 3 && piles->pile_a[1] > piles->pile_a[2])
-		{
-			swap_a(piles, TRUE);
-			rotate_a(piles, TRUE);
-			rotate_a(piles, TRUE);
-			swap_a(piles, TRUE);
-		}
-
+		push_b(piles->pile_a[l_pos], piles);
+		sort_three(piles);
+		rotate_a(piles, TRUE);
+		push_a(piles->pile_b[0], piles, TRUE);
+		return ;
 	}
+	if (l_pos == 1)
+	{
+		swap_a(piles, TRUE);
+		push_b(piles->pile_a[l_pos], piles);
+		sort_three(piles);
+		rotate_a(piles, TRUE);
+		push_a(piles->pile_b[0], piles, TRUE);
+		return ;
+	}
+	if (h_pos == 0)
+		return ;
 }
 
 /*

@@ -15,10 +15,12 @@
 int	is_sorted(t_piles *piles)
 {
 	int	i;
-
+	
+	ft_printf("is_sorted is here\n");
 	i = -1;
 	while (++i < piles->len_a - 1)
 		if (piles->pile_a[i] >= piles->pile_a[i + 1])
-			return (TRUE);
-	return (FALSE);
+			return (FALSE);
+	ft_printf("Pile is sorted\n");
+	return (TRUE);
 }

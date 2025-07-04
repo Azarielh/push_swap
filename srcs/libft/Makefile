@@ -90,7 +90,7 @@ check_sources:
 # Compile the object files
 $(OBJS_DIR)%.o: %.c
 	@mkdir -p $(dir $@)
-	@echo -n "$(BLUE)$(notdir $@) $(RESET)"
+	@printf "$(BLUE)$(notdir $@) $(RESET)"
 	@cc $(CFLAGS) -I . $< -c -o $@ && echo "$(GREEN)>>> SUCCESS $(RESET)" || { echo "$(ERROR_MSG)"; exit 1; }
 
 # Create lib with ar rc

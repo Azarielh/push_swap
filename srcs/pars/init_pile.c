@@ -14,7 +14,7 @@
 
 int	init_pile(char **args, t_piles *piles, int argc)
 {
-	ft_printf(YELLOW"init is here\n"RESET);
+	// ft_printf(YELLOW"init is here\n"RESET);
 	piles->len_a = 0;
 	piles->len_b = 0;
 	piles->maxlen = argc + 1;

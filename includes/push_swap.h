@@ -56,7 +56,7 @@ int		init_pile(char **args, t_piles *piles, int argc);
 void	print_pile_a(t_piles *piles);
 void	print_pile_b(t_piles *piles);
 int		exit_error(char *error_msg);
-
+int		normalize(t_piles *pile, int *error);
 void	exception_handler(int argc, t_piles *piles);
 
 void	swap_a(t_piles *piles, int do_print);

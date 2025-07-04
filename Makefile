@@ -1,5 +1,5 @@
-.PHONY: all clean fclean re force
 
+.PHONY: all clean fclean re force
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
 
@@ -23,7 +23,8 @@ INC_DIR = includes/
 PSWAP_PARS = 	srcs/pars/is_valid_int_list.c\
 				srcs/pars/init_pile.c\
 				srcs/pars/get_highest.c\
-				srcs/pars/get_lowest.c
+				srcs/pars/get_lowest.c\
+				srcs/pars/normalize.c\
 
 # PSWAP_TOOLS
 PSWAP_PRINT = srcs/error/print_stuff.c\
@@ -52,19 +53,25 @@ OBJS = $(addprefix $(OBJS_DIR), $(SRCS:.c=.o))
 COMPIL_ERROR = "$(RED)[ERROR] Compilation failed$(RESET)"
 MISSING_FILE = "est manquant ou introuvable. Vérifiez que tous les fichiers source sont présents."
 # Check source files
-all: check_sources $(NAME)
+all: print-banner check_sources $(NAME)
+
+print-banner:
+	@cols=$$(tput cols); \
+	printf '%*s\n' "$${cols}" '' | tr ' ' '='; \
+	echo "PUSH_SWAP !"; \
+	printf '%*s\n' "$${cols}" '' | tr ' ' '='
 
 check_sources:
 	@for file in $(SRCS); do \
 		if [ ! -f $$file ]; then \
-			echo "$(RED)[ERROR] Le fichier $$file $(MISSING_FILE) $(RESET)"; \
+			printf "$(RED)[ERROR] Le fichier $$file $(MISSING_FILE) $(RESET)"; \
 		fi; \
 	done
 
 # Compile the object files
 $(OBJS_DIR)%.o: %.c
 	@mkdir -p $(dir $@)
-	@echo -n "$(BLUE)$(notdir $@) $(RESET)"
+	@printf "$(BLUE)$(notdir $@) $(RESET)"
 	@gcc $(CFLAGS) -I $(INC_DIR) $< -c -o $@ && echo "$(GREEN)>>> SUCCESS $(RESET)" || { echo "$(ERROR_MSG)"; exit 1; }
 
 # Create lib with ar rc
@@ -73,9 +80,9 @@ ${NAME}: check_sources ${LIBFT_A} ${OBJS}
 	@echo "$(GREEN)======================= All push_swap function has been compiled =======================$(RESET)"
 
 # Get libft
-$(LIBFT_A): force
-	@echo "$(YELLOW)1/  Building libft..............................................................................$(RESET)"
-	@$(MAKE) -C $(LIBFT_DIR) --no-print-directory || @echo "Issue while attempting compiling libft"
+$(LIBFT_A):
+	@printf "$(YELLOW)1/  Building libft...........................................\n$(RESET)"
+	@$(MAKE) -C $(LIBFT_DIR) --no-print-directory || @printf "Issue while attempting compiling libft"
 	@cp $(LIBFT_DIR)$(LIBFT_H) $(INC_DIR) && cp $(LIBFT_DIR)ansi_format.h $(INC_DIR)
 
 # Use to force libft to relink if something has changed within
@@ -83,26 +90,24 @@ force:
 
 # Clean it all up
 clean:
-	- mv $(INC_DIR)$(LIBFT_H) $(OBJS_DIR) 
+	@mv $(INC_DIR)$(LIBFT_H) $(OBJS_DIR) 
 	@rm -rf $(OBJS_DIR) && echo "$(YELLOW)======================= All object files has been removed =======================$(RESET)"
 
 fclean: clean
 	@rm -f  $(NAME) && echo "$(YELLOW)======================= $(NAME) has been removed =======================$(RESET)"
 
 re: fclean all
-	@echo "$(GREEN)======================= $(NAME) has been recompiled =======================$(RESET)"
-# Ajouter la cmd de mke dans la regle debug et changer la valeur de variable de flags a cet endroit là
 
 debug: CFLAGS += -g3
 debug: re
 # ________________ Color codes ________________________
 
-RESET      = \033[0m
-RED        = \033[31m
-GREEN      = \033[32m
-YELLOW     = \033[33m
-BLUE       = \033[34m
-MAGENTA    = \033[35m
-CYAN       = \033[36m
-WHITE      = \033[37m
-BOLD       = \033[1m
+RESET      = \\033[0m
+RED        = \\033[31m
+GREEN      = \\033[32m
+YELLOW     = \\033[33m
+BLUE       = \\033[34m
+MAGENTA    = \\033[35m
+CYAN       = \\033[36m
+WHITE      = \\033[37m
+BOLD       = \\033[1m

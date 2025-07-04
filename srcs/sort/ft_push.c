@@ -21,7 +21,11 @@ void	push_a(int value, t_piles *piles, int do_print)
 	if (piles->len_a > piles->maxlen)
 		exit_error("pile A is full, impossible to push a new element.\n");
 	ft_memmove(piles->pile_a + 1, piles->pile_a, sizeof(int) * piles->len_a);
+	ft_memmove(piles->pile_b - 1, piles->pile_b, sizeof(int) * piles->len_b);
+
 	piles->pile_a[0] = value;
+	if (piles->len_b > 0)
+		piles->len_b--;
 	piles->len_a++;
 	if (do_print)
 		ft_printf(GREEN"PA\n"RESET);
@@ -36,7 +40,10 @@ void	push_b(int value, t_piles *piles)
 	if (piles->len_b > piles->maxlen)
 		exit_error("pile B is full, impossible to push a new element.\n");
 	ft_memmove(piles->pile_b + 1, piles->pile_b, sizeof(int) * piles->len_b);
+	ft_memmove(piles->pile_a - 1, piles->pile_a, sizeof(int) * piles->len_a);
 	piles->pile_b[0] = value;
+	if (piles->len_a > 0)
+		piles->len_a--;
 	piles->len_b++;
 	ft_printf(GREEN"PB\n"RESET);
 }

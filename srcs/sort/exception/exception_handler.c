@@ -20,7 +20,7 @@ void	exception_handler(int argc, t_piles *piles)
 
 	if (argc == 2 && piles->pile_a[0] > piles->pile_a[1])
 		swap_a(piles, TRUE);
-	if (argc == 3)
+	else if (argc == 3)
 		sort_three (piles);
 	if (argc == 4)
 		sort_four(piles);
