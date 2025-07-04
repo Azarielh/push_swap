@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	init_pile(char **args, t_piles *piles, int argc)
 {
-	// ft_printf(YELLOW"init is here\n"RESET);
+	ft_printf(YELLOW"init is here\n"RESET);
 	piles->len_a = 0;
 	piles->len_b = 0;
 	piles->maxlen = argc + 1;
@@ -24,6 +24,6 @@ int	init_pile(char **args, t_piles *piles, int argc)
 	if (piles->pile_a == NULL || piles->pile_b == NULL)
 		exit_error("malloc");
 	while (argc >= 1)
-		push_a(ft_atoi(args[argc--]), piles, FALSE);
+		push_a(ft_atoi(args[argc--]), piles, FALSE);	
 	return (0);
 }

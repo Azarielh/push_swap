@@ -15,7 +15,7 @@
 int	is_valid_int_list(char **pile_base, int argc)
 {
 	int	i;
-
+	ft_printf("is valid int list is here");
 	i = 1;
 	while (i < argc)
 	{

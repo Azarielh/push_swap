@@ -15,7 +15,7 @@
 int	main(int argc, char **pile_base)
 {
 	t_piles	piles;
-	int		error;
+
 	ft_printf(BLUE"\n\n=============== NEW TEST  ===============\n\n"RESET);
 
 	if (argc < 3)
@@ -23,14 +23,15 @@ int	main(int argc, char **pile_base)
 	if (is_valid_int_list(pile_base, argc))
 		ft_printf("Args are a "GREEN"valid "RESET"int list\n");
 	init_pile(pile_base++, &piles, argc - 1);
-	print_pile_a(&piles);
+	//print_pile_a(&piles);
 
-	// if (is_sorted(&piles))
-	// 	return (0);
+	if (is_sorted(&piles))
+		return (0);
+	normalize (&piles);
+	
 	// if (argc < 6)
 	// 	exception_handler(argc, &piles);
-	normalize (&piles, &error);
-	print_pile_a(&piles);
+	//print_pile_a(&piles);
 
 	return (0);
 }

@@ -77,7 +77,7 @@ $(OBJS_DIR)%.o: %.c
 # Create lib with ar rc
 ${NAME}: check_sources ${LIBFT_A} ${OBJS}
 	@gcc ${CFLAGS} ${OBJS} $(LIBFT_DIR)$(LIBFT_A) -o $(NAME) || { echo "$(ERROR_MSG)"; exit 1; }
-	@echo "$(GREEN)======================= All push_swap function has been compiled =======================$(RESET)"
+	@echo "$(GREEN)=============== All push_swap function has been compiled ===============$(RESET)"
 
 # Get libft
 $(LIBFT_A):
@@ -91,10 +91,10 @@ force:
 # Clean it all up
 clean:
 	@mv $(INC_DIR)$(LIBFT_H) $(OBJS_DIR) 
-	@rm -rf $(OBJS_DIR) && echo "$(YELLOW)======================= All object files has been removed =======================$(RESET)"
+	@rm -rf $(OBJS_DIR) && echo "$(YELLOW)=============== All object files has been removed ===============$(RESET)"
 
 fclean: clean
-	@rm -f  $(NAME) && echo "$(YELLOW)======================= $(NAME) has been removed =======================$(RESET)"
+	@rm -f  $(NAME) && echo "$(YELLOW)=============== $(NAME) has been removed ===============$(RESET)"
 
 re: fclean all
 

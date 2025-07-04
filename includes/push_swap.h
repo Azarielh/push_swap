@@ -40,6 +40,7 @@ typedef struct s_piles
 	int		len_a;
 	int		len_b;
 	int		maxlen;
+	int		*pos_target;
 	int		*pile_a;
 	int		*pile_b;
 	int		max;
@@ -55,8 +56,9 @@ int		is_sorted(t_piles *piles);
 int		init_pile(char **args, t_piles *piles, int argc);
 void	print_pile_a(t_piles *piles);
 void	print_pile_b(t_piles *piles);
+void	print_pos_target(t_piles *piles);
 int		exit_error(char *error_msg);
-int		normalize(t_piles *pile, int *error);
+int		normalize(t_piles *pile);
 void	exception_handler(int argc, t_piles *piles);
 
 void	swap_a(t_piles *piles, int do_print);

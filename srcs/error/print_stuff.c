@@ -32,6 +32,8 @@ void print_pile_a(t_piles *piles)
 	for (int i = 0; i < piles->len_a; i++) {
 		ft_printf("pile_a[%d] = %d\n", i, piles->pile_a[i]);
 	}
+	ft_printf("print_pile is out.\n");
+	
 }
 
 void print_pile_b(t_piles *piles)
@@ -45,5 +47,20 @@ void print_pile_b(t_piles *piles)
 	ft_printf(BLUE"Contenu de pile_b :\n"RESET);
 	for (int i = 0; i < piles->len_b; i++) {
 		ft_printf("pile_b[%d] = %d\n", i, piles->pile_b[i]);
+	}
+}
+
+void print_pos_target(t_piles *piles)
+{
+	ft_printf("print_pos_target is here.\n");
+
+	if (piles->pile_a == NULL)
+	{
+		ft_printf("pile a is empty.\n");
+		return ;
+	}
+	ft_printf(BLUE"Contenu de pos_taget :\n"RESET);
+	for (int i = 0; i < piles->len_a - 1; i++) {
+		ft_printf("pile_a[%d] = %d\n", i, piles->pos_target[i]);
 	}
 }
