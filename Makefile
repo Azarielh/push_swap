@@ -37,6 +37,7 @@ PSWAP_SORT = 	srcs/sort/is_sorted.c\
 				srcs/sort/exception/exception_handler.c\
 				srcs/sort/exception/sort_three.c\
 				srcs/sort/exception/sort_four.c\
+				srcs/sort/exception/sort_five.c\
 
 # Define the source files
 SRCS = $(P_SWAP_MAIN) $(PSWAP_PARS) $(PSWAP_PRINT) $(PSWAP_SORT)

@@ -76,6 +76,7 @@ void	double_reverse(t_piles *piles);
 
 void	sort_three(t_piles *piles);
 void	sort_four(t_piles *piles);
+void	sort_five(t_piles *piles);
 int		get_highest_pos(t_piles *piles);
 int		get_lowest_pos(t_piles *piles);
 

@@ -20,7 +20,7 @@ int	exit_error(char *error_msg)
 
 void print_pile_a(t_piles *piles)
 {
-	ft_printf("print_pile a is here.\n");
+	// ft_printf("print_pile a is here.\n");
 
 	if (piles->pile_a == NULL)
 	{
@@ -31,9 +31,7 @@ void print_pile_a(t_piles *piles)
 	ft_printf(BLUE"Contenu de pile_a :\n"RESET);
 	for (int i = 0; i < piles->len_a; i++) {
 		ft_printf("pile_a[%d] = %d\n", i, piles->pile_a[i]);
-	}
-	ft_printf("print_pile is out.\n");
-	
+	}	
 }
 
 void print_pile_b(t_piles *piles)

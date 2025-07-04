@@ -25,7 +25,11 @@ void	exception_handler(int argc, t_piles *piles)
 	if (argc == 4)
 		sort_four(piles);
 	if (argc == 5)
-		return ;// create function that manage this case
+		sort_five(piles);
 	return ;
 }
 
+// void sort_five(t_piles *piles)
+// {
+// 	while (piles->pile_a)
+// }
