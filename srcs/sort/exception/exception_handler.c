@@ -14,7 +14,6 @@
 
 void	exception_handler(int argc, t_piles *piles)
 {
-	ft_printf(YELLOW"exception handler is here\n");
 	argc--;
 	ft_printf("exception handler : argc = %d\n", argc);
 

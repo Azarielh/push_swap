@@ -24,10 +24,10 @@ int	main(int argc, char **pile_base)
 		ft_printf("Args are a "GREEN"valid "RESET"int list\n");
 	init_pile(pile_base++, &piles, argc - 1);
 	//print_pile_a(&piles);
-
+	ft_printf("argc = %d\n", argc - 1);
 	if (is_sorted(&piles))
 		return (0);
-	if (argc < 6)
+	if (argc < 7)
 		exception_handler(argc, &piles);
 
 	normalize (&piles);

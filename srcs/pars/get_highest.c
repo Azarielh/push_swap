@@ -20,10 +20,10 @@ int	get_highest_pos(t_piles *piles)
 
 		ft_printf(YELLOW"get_highest_pos is here\n");
 
-	i = 0;
+	i = -1;
 	pos = 0;
 	highest = piles->pile_a[0];
-	while (piles->pile_a[++i])
+	while (++i < piles->len_a)
 	{
 		if (piles->pile_a[i] > highest)
 		{

@@ -19,10 +19,10 @@ int		get_lowest_pos(t_piles *piles)
 	int	lowest;
 	ft_printf(YELLOW"get_lowest_pos is here\n");
 
-	i = 0;
+	i = -1;
 	pos = 0;
 	lowest = piles->pile_a[0];
-	while (piles->pile_a[++i])
+	while (++i < piles->len_a)
 	{
 		if (piles->pile_a[i] < lowest)
 		{
