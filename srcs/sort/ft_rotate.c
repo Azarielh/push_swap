@@ -16,22 +16,24 @@ void	rotate_a(t_piles *piles, int do_print)
 {
 	int	first;
 	int	len;
-
+	ft_printf(YELLOW"rotate_a is here\n");
+	print_pile_a(piles);
 	len = 0;
 	first = piles->pile_a[0];
 	ft_printf(ORANGE"first = "RESET"%d\n", first);
 	while (len < piles->len_a)
 	{
 		piles->pile_a[len] = piles->pile_a[len + 1];
-		ft_printf(ORANGE"len = "RESET"%d soit pile_a[%d] = %d\n",
-			len, len, piles->pile_a[len + 1]);
+		// ft_printf(ORANGE"len = "RESET"%d soit pile_a[%d] = %d\n",
+		// 	len, len, piles->pile_a[len + 1]);
 		len++;
 	}
 	piles->pile_a[piles->len_a - 1] = first;
-	ft_printf(ORANGE"len = "RESET"%d soit pile_a[%d] = %d\n",
-		len - 1, len - 1, first);
+	// ft_printf(ORANGE"len = "RESET"%d soit pile_a[%d] = %d\n",
+	// 	len - 1, len - 1, first);
 	if (do_print == TRUE)
 		ft_printf(GREEN"ra\n"RESET);
+	print_pile_a(piles);
 }
 
 void	rotate_b(t_piles *piles, int do_print)

@@ -28,3 +28,4 @@ void	exception_handler(int argc, t_piles *piles)
 		return ;// create function that manage this case
 	return ;
 }
+

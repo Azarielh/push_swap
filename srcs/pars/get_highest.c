@@ -18,6 +18,8 @@ int	get_highest_pos(t_piles *piles)
 	int	pos;
 	int	highest;
 
+		ft_printf(YELLOW"get_highest_pos is here\n");
+
 	i = 0;
 	pos = 0;
 	highest = piles->pile_a[0];

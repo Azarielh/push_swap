@@ -17,6 +17,7 @@ int		get_lowest_pos(t_piles *piles)
 	int	i;
 	int	pos;
 	int	lowest;
+	ft_printf(YELLOW"get_lowest_pos is here\n");
 
 	i = 0;
 	pos = 0;

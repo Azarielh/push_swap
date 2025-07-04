@@ -10,22 +10,19 @@ int	normalize(t_piles *piles)
 	piles->pos_target = malloc(sizeof(int) * piles->maxlen);
 	if (!piles->pos_target)
 		return (exit_error("normalize: malloc failed"));
-	ft_printf("normalize success malloc\n");
-
 	i = -1;
 	j = -1;
 	count = 0;
-	ft_printf("pile in normalize before treatment\n");
-	print_pile_a(piles);
+	// ft_printf("pile in normalize before treatment\n");
+	// print_pile_a(piles);
 
-	while (++i < piles->maxlen)
-		piles->pos_target[i] = piles->pile_a[i];
-	i = -1;
-	while (++i < piles->maxlen)
+	while (++i < piles->len_a)
 	{
-		while (++j < piles->maxlen)
-			if (piles->pos_target[j] <= piles->pos_target[i] && i != j)
-				count++;
+		while (++j < piles->len_a)
+		{
+			if (piles->pile_a[j] <= piles->pile_a[i] && i != j)
+					count++;
+		}
 		piles->pos_target[i] = count;
 		count = 0;
 		j = -1;

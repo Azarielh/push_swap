@@ -27,10 +27,11 @@ int	main(int argc, char **pile_base)
 
 	if (is_sorted(&piles))
 		return (0);
+	if (argc < 6)
+		exception_handler(argc, &piles);
+
 	normalize (&piles);
 	
-	// if (argc < 6)
-	// 	exception_handler(argc, &piles);
 	//print_pile_a(&piles);
 
 	return (0);

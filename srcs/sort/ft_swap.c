@@ -15,12 +15,13 @@
 void	swap_a(t_piles *piles, int do_print)
 {
 	int	temp;
-
+	print_pile_a(piles);
 	temp = piles->pile_a[0];
 	piles->pile_a[0] = piles->pile_a[1];
 	piles->pile_a[1] = temp;
 	if (do_print == TRUE)
 		ft_printf(GREEN"sa"RESET"\n");
+	print_pile_a(piles);
 }
 
 void	swap_b(t_piles *piles, int do_print)

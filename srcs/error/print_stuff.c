@@ -60,7 +60,7 @@ void print_pos_target(t_piles *piles)
 		return ;
 	}
 	ft_printf(BLUE"Contenu de pos_taget :\n"RESET);
-	for (int i = 0; i < piles->len_a - 1; i++) {
-		ft_printf("pile_a[%d] = %d\n", i, piles->pos_target[i]);
+	for (int i = 0; i < piles->len_a; i++) {
+		ft_printf("pos_target[%d] = %d\n", i, piles->pos_target[i]);
 	}
 }
