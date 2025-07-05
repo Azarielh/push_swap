@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 03:33:55 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/05 04:27:08 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/05 04:51:39 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	exit_error(char *error_msg)
 {
 	ft_putendl_fd(RED"Error :"RESET, 2);
 	ft_putendl_fd(error_msg, 2);
+	// Add piles as an argument to free
 	exit (EXIT_FAILURE);
 }
 

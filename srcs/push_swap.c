@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 19:34:51 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/05 04:39:12 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/05 05:25:49 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int	main(int argc, char **pile_base)
 		normalize (&piles);
 		sort(&piles);
 	}
-	print_pile_a(&piles);
 	return (0);
 }
 

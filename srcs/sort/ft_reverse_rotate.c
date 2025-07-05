@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 23:30:23 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/05 03:03:09 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/05 05:38:48 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	reverse_rotate_a(t_piles *piles, int do_print)
 	}
 	piles->pile_a[0] = last;
 	if (do_print == TRUE)
-		ft_printf(GREEN"rra\n"RESET);
+		ft_printf("rra\n");
 }
 
 void	reverse_rotate_b(t_piles *piles, int do_print)
@@ -45,12 +45,12 @@ void	reverse_rotate_b(t_piles *piles, int do_print)
 	}
 	piles->pile_b[0] = last;
 	if (do_print == TRUE)
-		ft_printf(GREEN"rrb\n"RESET);
+		ft_printf("rrb\n");
 }
 
 void	double_reverse(t_piles *piles)
 {
 	reverse_rotate_a(piles, FALSE);
 	reverse_rotate_b(piles, FALSE);
-	ft_printf(GREEN"rrr"RESET);
+	ft_printf("rrr");
 }

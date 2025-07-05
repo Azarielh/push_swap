@@ -73,17 +73,17 @@ check_sources:
 	done
 
 # Compile the object files
-$(OBJS_DIR)%.o: %.c
+$(OBJS_DIR)%.o: %.c 
 	@mkdir -p $(dir $@)
 	@printf "$(BLUE)$(notdir $@) $(RESET)"
 	@gcc $(CFLAGS) -I $(INC_DIR) $< -c -o $@ && echo "$(GREEN)>>> SUCCESS $(RESET)" || { echo "$(ERROR_MSG)"; exit 1; }
 
 # Create lib with ar rc
-${NAME}: check_sources ${LIBFT_A} ${OBJS}
+${NAME}: check_sources ${LIBFT_A} ${OBJS}  # ${INC_DIR}
 	@gcc ${CFLAGS} ${OBJS} $(LIBFT_DIR)$(LIBFT_A) -o $(NAME) || { echo "$(ERROR_MSG)"; exit 1; }
 	@echo "$(GREEN)=============== All push_swap function has been compiled ===============$(RESET)"
 
-# Get libft
+# Get libft``
 $(LIBFT_A):
 	@printf "$(YELLOW)1/  Building libft...........................................\n$(RESET)"
 	@$(MAKE) -C $(LIBFT_DIR) --no-print-directory || @printf "Issue while attempting compiling libft"
