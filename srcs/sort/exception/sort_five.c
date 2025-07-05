@@ -23,7 +23,7 @@ void	sort_five(t_piles *piles)
 	else if (min_pos == 3 || min_pos == 4)
 		while (min_pos++ < piles->len_a)
 			reverse_rotate_a(piles, TRUE);
-	push_b(piles->pile_a[0], piles);
+	push_b(piles, TRUE);
 	sort_four(piles);
-	push_a(piles->pile_b[0], piles, TRUE);
+	push_a(piles, TRUE);
 }

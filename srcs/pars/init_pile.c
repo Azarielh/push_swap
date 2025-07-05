@@ -14,15 +14,22 @@
 
 int	init_pile(char **args, t_piles *piles, int argc)
 {
-	piles->len_a = 0;
+	int	i;
+
+	piles->len_a = argc;
 	piles->len_b = 0;
-	piles->maxlen = argc + 1;
-	piles->pile_a = malloc(sizeof(int *) * argc + 1);
-	piles->pile_b = malloc(sizeof(int *) * argc + 1);
+	piles->maxlen = argc;
+	piles->pile_a = malloc(sizeof(int) * argc);
+	piles->pile_b = malloc(sizeof(int) * argc);
 	if (piles->pile_a == NULL || piles->pile_b == NULL)
 		exit_error("malloc");
-	while (argc >= 1)
-		push_a(ft_atoi(args[argc--]), piles, FALSE);
-	normalize (piles);
+	i = 0;
+    while (i < argc)
+    {
+            piles->pile_a[i] = ft_atoi(args[i]);
+            i++;
+    }
+	piles->max = get_highest_pos(piles);
+	piles->min = get_lowest_pos(piles);
 	return (0);
 }

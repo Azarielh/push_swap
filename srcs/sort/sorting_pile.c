@@ -29,13 +29,13 @@ void sort(t_piles *piles)
 		while (i < size)
 		{
 			if (((piles->pile_a[0] >> bit) & 1) == 0)
-				push_b(piles->pile_a[0], piles);
+				push_b(piles, TRUE);
 			else
 				rotate_a(piles, TRUE);
 			i++;
 		}
 		while (piles->len_b > 0)
-			push_a(piles->pile_b[0], piles, TRUE);
+			push_a(piles, TRUE);
 		bit++;
 	}
 }

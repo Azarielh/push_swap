@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 23:30:23 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/05 05:38:48 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/02 02:17:23 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,5 @@ void	double_reverse(t_piles *piles)
 {
 	reverse_rotate_a(piles, FALSE);
 	reverse_rotate_b(piles, FALSE);
-	ft_printf("rrr");
+	ft_printf("rrr\n");
 }
