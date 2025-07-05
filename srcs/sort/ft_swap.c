@@ -6,11 +6,11 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 23:17:16 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/05 04:05:19 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/05 04:06:33 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	swap_a(t_piles *piles, int do_print)
 {
