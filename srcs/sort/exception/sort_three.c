@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 05:18:14 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/02 01:11:54 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/05 00:00:52 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@ void	sort_three(t_piles *piles)
 {
 	int	h_pos;
 	int	l_pos;
+
 	print_pile_a(piles);
 	ft_printf("sort_three is here.\n");
 	h_pos = get_highest_pos(piles);
 	l_pos = get_lowest_pos(piles);
-	ft_printf("higher and lower has been set\n");
-
 	if (h_pos == 0 && l_pos == 1)
 		rotate_a(piles, TRUE);
 	if (h_pos == 0 && l_pos == 2)

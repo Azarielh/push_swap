@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 19:34:38 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/02 01:07:25 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/05 02:59:46 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,6 @@ typedef struct s_piles
 	int		min;
 }			t_piles;
 
-/**
- *@brief check if list is valid
- *
-*/
 int		is_valid_int_list(char **pile_base, int argc);
 int		is_sorted(t_piles *piles);
 int		init_pile(char **args, t_piles *piles, int argc);
@@ -64,20 +60,24 @@ void	exception_handler(int argc, t_piles *piles);
 void	swap_a(t_piles *piles, int do_print);
 void	swap_b(t_piles *piles, int do_print);
 void	double_swap(t_piles *piles);
-
 void	push_a(int value, t_piles *piles, int do_print);
 void	push_b(int value, t_piles *piles);
-
 void	rotate_a(t_piles *piles, int do_print);
 void	rotate_b(t_piles *piles, int do_print);
 void	reverse_rotate_a(t_piles *piles, int do_print);
 void	reverse_rotate_b(t_piles *piles, int do_print);
 void	double_reverse(t_piles *piles);
 
+
 void	sort_three(t_piles *piles);
 void	sort_four(t_piles *piles);
 void	sort_five(t_piles *piles);
+void	sort(t_piles *piles);
+int		find_better(t_piles *piles);
 int		get_highest_pos(t_piles *piles);
 int		get_lowest_pos(t_piles *piles);
+int		count_bits(int nb);
+int		pick_binary(int nb, int pos);
+
 
 #endif

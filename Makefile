@@ -19,7 +19,8 @@ P_SWAP_MAIN = srcs/push_swap.c
 
 # pswap dir
 
-INC_DIR = includes/
+INC_DIR = includes/\
+
 PSWAP_PARS = 	srcs/pars/is_valid_int_list.c\
 				srcs/pars/init_pile.c\
 				srcs/pars/get_highest.c\
@@ -34,6 +35,8 @@ PSWAP_SORT = 	srcs/sort/is_sorted.c\
 				srcs/sort/ft_swap.c\
 				srcs/sort/ft_reverse_rotate.c\
 				srcs/sort/ft_rotate.c\
+				srcs/sort/sorting_pile.c\
+				srcs/sort/bit_tools.c\
 				srcs/sort/exception/exception_handler.c\
 				srcs/sort/exception/sort_three.c\
 				srcs/sort/exception/sort_four.c\
@@ -91,7 +94,7 @@ force:
 
 # Clean it all up
 clean:
-	@mv $(INC_DIR)$(LIBFT_H) $(OBJS_DIR) 
+	@mv ./includes/$(LIBFT_H) ./$(OBJS_DIR) 
 	@rm -rf $(OBJS_DIR) && echo "$(YELLOW)=============== All object files has been removed ===============$(RESET)"
 
 fclean: clean

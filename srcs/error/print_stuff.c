@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 03:33:55 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/01 22:23:09 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/05 01:47:15 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void print_pile_a(t_piles *piles)
 	ft_printf(BLUE"Contenu de pile_a :\n"RESET);
 	for (int i = 0; i < piles->len_a; i++) {
 		ft_printf("pile_a[%d] = %d\n", i, piles->pile_a[i]);
-	}	
+	}
 }
 
 void print_pile_b(t_piles *piles)

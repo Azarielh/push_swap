@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 04:35:04 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/06/29 05:11:28 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/05 02:09:57 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int	init_pile(char **args, t_piles *piles, int argc)
 		exit_error("malloc");
 	while (argc >= 1)
 		push_a(ft_atoi(args[argc--]), piles, FALSE);
+	normalize (piles);
 	return (0);
 }

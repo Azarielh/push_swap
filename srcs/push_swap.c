@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 19:34:51 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/02 01:45:03 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/05 02:56:27 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,12 @@ int	main(int argc, char **pile_base)
 		return (0);
 	if (argc < 7)
 		exception_handler(argc, &piles);
-
-	normalize (&piles);
-	
-	//print_pile_a(&piles);
+	else
+	{
+		normalize (&piles);
+		sort(&piles);
+	}
+	print_pile_a(&piles);
 
 	return (0);
 }

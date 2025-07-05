@@ -23,10 +23,9 @@ int	normalize(t_piles *piles)
 			if (piles->pile_a[j] <= piles->pile_a[i] && i != j)
 					count++;
 		}
-		piles->pos_target[i] = count;
+		piles->pile_a[i] = count;
 		count = 0;
 		j = -1;
 	}
-	print_pos_target(piles);
 	return (0);
 }
