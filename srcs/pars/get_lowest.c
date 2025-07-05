@@ -6,13 +6,13 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 06:25:09 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/05 04:00:45 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/06 00:34:38 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int		get_lowest_pos(t_piles *piles)
+int	get_lowest_pos(t_piles *piles)
 {
 	int	i;
 	int	pos;

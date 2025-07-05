@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 19:34:38 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/05 04:02:54 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/06 00:30:25 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,11 @@ int		is_sorted(t_piles *piles);
 int		init_pile(char **args, t_piles *piles, int argc);
 void	print_pile_a(t_piles *piles);
 void	print_pile_b(t_piles *piles);
-int		exit_error(char *error_msg);
+int		exit_error(char *error_msg, t_piles *piles);
 int		normalize(t_piles *pile);
 void	exception_handler(int argc, t_piles *piles);
-// Getters for lowest and highest values
 int		get_lowest_pos(t_piles *piles);
 int		get_highest_pos(t_piles *piles);
-
-// Sorting functions
 void	sort(t_piles *piles);
 void	sort_three(t_piles *piles);
 void	sort_four(t_piles *piles);
@@ -75,20 +72,12 @@ void	reverse_rotate_a(t_piles *piles, int do_print);
 void	reverse_rotate_b(t_piles *piles, int do_print);
 void	double_reverse(t_piles *piles);
 void	double_rotate(t_piles *piles);
-
-// Radix Sort functions
 void	radix_sort(t_piles *piles);
 void	sort_by_bit_optimized(t_piles *piles, int bit_pos);
 int		get_bit(int number, int bit_pos);
-
-
-// Normalization functions
 void	normalize_values(t_piles *piles);
 void	bubble_sort_normalize(int *arr, int size);
-
-// Bit manipulation functions
 int		count_bits(int nb);
 int		pick_binary(int nb, int pos);
-
 
 #endif

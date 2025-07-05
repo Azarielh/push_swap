@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   normalize.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/06 00:33:15 by jlacaze-          #+#    #+#             */
+/*   Updated: 2025/07/06 00:38:27 by jlacaze-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/push_swap.h"
 
 int	normalize(t_piles *piles)
@@ -6,10 +18,10 @@ int	normalize(t_piles *piles)
 	int	j;
 	int	count;
 	int	*temp;
-	
+
 	temp = malloc(sizeof(int) * piles->maxlen);
 	if (!temp)
-		return (exit_error("normalize: malloc failed"));
+		return (exit_error("normalize: malloc failed", piles));
 	i = -1;
 	while (++i < piles->len_a)
 		temp[i] = piles->pile_a[i];
