@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 00:01:33 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/05 03:09:07 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/05 03:54:39 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,28 @@
 
 void sort(t_piles *piles)
 {
+	int bit;
+	int max_bits;
+	int size;
 	int i;
-	int j;
-	int highest;
-	int len;
 
-	i = 0;
-	j = 0;
-	highest = get_highest_pos(piles);
-	len = count_bits(highest) + 1;
-	ft_printf("highest is = %d   ---   len is = %d\n", highest, len);
-	while (++j < len)
+	max_bits = count_bits(piles->len_a - 1);
+	bit = 0;
+	
+	while (bit < max_bits)
 	{
-		ft_printf(BLUE "pick_binary(piles->pile_a[0](" RED "%d" BLUE "), j(" RED "%d" BLUE "))returned = " RED "%d\n" RESET, piles->pile_a[0], j, pick_binary(piles->pile_a[0], j));
-		while (++i < piles->len_a)
+		size = piles->len_a;
+		i = 0;
+		while (i < size)
 		{
-			if (pick_binary(piles->pile_a[0], j) == 1)
-				rotate_a(piles, TRUE);
-			else
+			if (((piles->pile_a[0] >> bit) & 1) == 0)
 				push_b(piles->pile_a[0], piles);
+			else
+				rotate_a(piles, TRUE);
+			i++;
 		}
-		print_pile_a(piles);
 		while (piles->len_b > 0)
 			push_a(piles->pile_b[0], piles, TRUE);
-		i = -1;
+		bit++;
 	}
 }

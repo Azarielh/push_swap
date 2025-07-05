@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 04:38:59 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/02 01:43:26 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/05 03:59:54 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 void	exception_handler(int argc, t_piles *piles)
 {
 	argc--;
-	ft_printf("exception handler : argc = %d\n", argc);
-
 	if (argc == 2 && piles->pile_a[0] > piles->pile_a[1])
 		swap_a(piles, TRUE);
 	else if (argc == 3)
@@ -27,8 +25,3 @@ void	exception_handler(int argc, t_piles *piles)
 		sort_five(piles);
 	return ;
 }
-
-// void sort_five(t_piles *piles)
-// {
-// 	while (piles->pile_a)
-// }

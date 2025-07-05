@@ -1,19 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bit_tools.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/05 03:54:46 by jlacaze-          #+#    #+#             */
+/*   Updated: 2025/07/05 03:54:48 by jlacaze-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
 int	pick_binary(int nb, int pos)
 {
-	int	num;
-	int	i;
-
-	i = 0;
-	num = 0;
-	if (pos >> 0)
-		return (0);
-	while (i < pos - 1)
-		nb = nb / 2 + (i++ *0);
-	num = nb % 2;
-	return (num);
+	return ((nb >> (pos - 1)) & 1);
 }
 
 

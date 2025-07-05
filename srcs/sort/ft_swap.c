@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 23:17:16 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/05 02:25:47 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/05 04:05:19 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,6 @@ void	swap_a(t_piles *piles, int do_print)
 	piles->pile_a[1] = temp;
 	if (do_print == TRUE)
 		ft_printf(GREEN"sa"RESET"\n");
-	temp = piles->pos_target[0];
-	piles->pos_target[0] = piles->pos_target[1];
-	piles->pos_target[1] = temp;
-	print_pile_a(piles);
 }
 
 void	swap_b(t_piles *piles, int do_print)
@@ -36,9 +32,6 @@ void	swap_b(t_piles *piles, int do_print)
 	piles->pile_b[1] = temp;
 	if (do_print == TRUE)
 		printf(GREEN"sb"RESET"\n");
-	temp = piles->pos_target[0];
-	piles->pos_target[0] = piles->pos_target[1];
-	piles->pos_target[1] = temp;
 }
 
 void	double_swap(t_piles *piles)

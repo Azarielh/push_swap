@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 19:34:38 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/05 02:59:46 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/05 04:02:54 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int		is_sorted(t_piles *piles);
 int		init_pile(char **args, t_piles *piles, int argc);
 void	print_pile_a(t_piles *piles);
 void	print_pile_b(t_piles *piles);
-void	print_pos_target(t_piles *piles);
 int		exit_error(char *error_msg);
 int		normalize(t_piles *pile);
 void	exception_handler(int argc, t_piles *piles);

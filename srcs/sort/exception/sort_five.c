@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 23:41:09 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/04 23:59:37 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/05 04:00:16 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	sort_five(t_piles *piles)
 {
 	int	min_pos ;
 
-	ft_printf("sort_five is here \n");
 	min_pos = get_lowest_pos(piles);
 	if (min_pos > 0 && min_pos <= 2)
 		while (0 < min_pos-- && min_pos <= 2)
@@ -25,11 +24,6 @@ void	sort_five(t_piles *piles)
 		while (min_pos++ < piles->len_a)
 			reverse_rotate_a(piles, TRUE);
 	push_b(piles->pile_a[0], piles);
-	print_pile_a(piles);
-
 	sort_four(piles);
-
-	print_pile_a(piles);
 	push_a(piles->pile_b[0], piles, TRUE);
-	print_pile_a(piles);
 }
