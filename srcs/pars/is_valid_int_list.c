@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 23:48:24 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/06 00:35:26 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/06 13:26:53 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int	is_valid_int_list(char **pile_base, int argc)
 		i++;
 	}
 	if (!has_no_double(pile_base))
-		return (exit_error("There is double in there"));
+		return (exit_error("There is double in there", NULL));
 	return (1);
 }

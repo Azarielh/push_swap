@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 19:34:51 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/05 23:06:00 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/06 14:04:00 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char **pile_base)
 	t_piles	piles;
 
 	if (argc < 3)
-		exit_error("", &piles);
+		exit_error("arguments", &piles);
 	if (!is_valid_int_list(pile_base, argc))
 		exit_error("Error\n", &piles);
 	init_pile(pile_base + 1, &piles, argc - 1);

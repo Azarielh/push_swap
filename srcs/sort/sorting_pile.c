@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 00:01:33 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/06 00:36:24 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/06 13:42:47 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	sort(t_piles *piles)
 
 	max_bits = count_bits(piles->len_a - 1);
 	bit = 0;
-
 	while (bit < max_bits)
 	{
 		size = piles->len_a;

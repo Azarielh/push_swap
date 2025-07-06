@@ -6,7 +6,7 @@
 /*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 19:34:38 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/06 00:30:25 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/06 13:35:41 by jlacaze-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ void	double_rotate(t_piles *piles);
 void	radix_sort(t_piles *piles);
 void	sort_by_bit_optimized(t_piles *piles, int bit_pos);
 int		get_bit(int number, int bit_pos);
-void	normalize_values(t_piles *piles);
-void	bubble_sort_normalize(int *arr, int size);
+// void	normalize_values(t_piles *piles);
+// void	bubble_sort_normalize(int *arr, int size);
 int		count_bits(int nb);
 int		pick_binary(int nb, int pos);
 
