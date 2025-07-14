@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_reverse_rotate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: jlacaze <jlacaze-@student.42lyon.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 23:30:23 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/02 02:17:23 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/14 09:38:59 by jlacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	reverse_rotate_a(t_piles *piles, int do_print)
 	last = piles->pile_a[len - 1];
 	while (first != last && len-- > 0)
 	{
-		piles->pile_a[len] = piles->pile_a[len - 1];
+		piles->pile_a[len] = piles->pile_a[len];
 	}
 	piles->pile_a[0] = last;
 	if (do_print == TRUE)
@@ -41,7 +41,7 @@ void	reverse_rotate_b(t_piles *piles, int do_print)
 	last = piles->pile_b[len - 1];
 	while (first != last && len-- > 0)
 	{
-		piles->pile_b[len] = piles->pile_b[len - 1];
+		piles->pile_b[len] = piles->pile_b[len];
 	}
 	piles->pile_b[0] = last;
 	if (do_print == TRUE)
