@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: jlacaze <jlacaze-@student.42lyon.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 23:17:16 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/06 13:17:43 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/16 21:50:06 by jlacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
 void	swap_a(t_piles *piles, int do_print)
 {

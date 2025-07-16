@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: jlacaze <jlacaze-@student.42lyon.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 02:36:18 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/06 19:34:35 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/16 23:13:38 by jlacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ long	ft_atoi(const char *str)
 	if (str[i] == '-' || str[i] == '+')
 		if (str[i++] == '-')
 			sign = -1;
-	while (ft_isdigit(str[i]))
+	while (ft_isdigit(str[i]) && str[i])
 	{
 		if (sign > 0 && result > (LLONG_MAX - (str[i] - '0')) / 10)
 			return (-1);

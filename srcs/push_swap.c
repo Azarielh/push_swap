@@ -6,11 +6,11 @@
 /*   By: jlacaze <jlacaze-@student.42lyon.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 19:34:51 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/16 04:59:08 by jlacaze          ###   ########.fr       */
+/*   Updated: 2025/07/16 21:50:44 by jlacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
 int	main(int argc, char **pile_base)
 {

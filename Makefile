@@ -60,7 +60,6 @@ DEPS = $(addprefix $(DEPS_DIR), $(SRCS:.c=.d))
 
 # Setting up an custom error message
 COMPIL_ERROR = "$(RED)[ERROR] Compilation failed$(RESET)"
-MISSING_FILE = "est manquant ou introuvable. Vérifiez que tous les fichiers source sont présents.\n"
 
 .PHONY: all clean fclean re force
 all: print-banner $(LIBFT_DIR)
@@ -88,7 +87,7 @@ $(OBJS_DIR)%.o: %.c
 # Create lib with ar rc
 $(NAME): $(OBJS) $(LIBFT_DIR)/$(LIBFT_A)
 	@$(CC) $(CFLAGS) -o $@ $(OBJS) -L$(LIBFT_DIR) -lft
-	@echo "$(GREEN)=============== All Fractol function has been compiled ===============$(RESET)"
+	@echo "$(GREEN)=============== All PUSH_SWAP function has been compiled ===============$(RESET)"
 
 # Use to force libft to relink if something has changed within
 force:

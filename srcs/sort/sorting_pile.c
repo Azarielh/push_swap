@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sorting_pile.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: jlacaze <jlacaze-@student.42lyon.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 00:01:33 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/06 13:42:47 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/16 21:50:25 by jlacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
 void	sort(t_piles *piles)
 {

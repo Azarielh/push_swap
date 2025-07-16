@@ -6,11 +6,11 @@
 /*   By: jlacaze <jlacaze-@student.42lyon.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 04:38:59 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/14 09:20:27 by jlacaze          ###   ########.fr       */
+/*   Updated: 2025/07/16 21:49:40 by jlacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/push_swap.h"
+#include "push_swap.h"
 
 void	exception_handler(int argc, t_piles *piles)
 {

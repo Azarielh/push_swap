@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: jlacaze <jlacaze-@student.42lyon.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 12:30:00 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/06 18:53:22 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/16 21:50:19 by jlacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
 void	radix_sort(t_piles *piles)
 {

@@ -6,11 +6,11 @@
 /*   By: jlacaze <jlacaze-@student.42lyon.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 23:30:23 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/14 09:37:12 by jlacaze          ###   ########.fr       */
+/*   Updated: 2025/07/16 21:50:02 by jlacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
 void	rotate_a(t_piles *piles, int do_print)
 {

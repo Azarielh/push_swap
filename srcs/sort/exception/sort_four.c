@@ -6,11 +6,11 @@
 /*   By: jlacaze <jlacaze-@student.42lyon.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 01:06:47 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/16 05:48:49 by jlacaze          ###   ########.fr       */
+/*   Updated: 2025/07/16 21:51:08 by jlacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/push_swap.h"
+#include "push_swap.h"
 
 void	sort_four(t_piles *piles)
 {
