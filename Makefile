@@ -1,7 +1,8 @@
 
-CFLAGS = -Wall -Wextra -Werror -I ./libft -MMD -MP 
 NAME = push_swap
+
 CC = cc
+CFLAGS = -Wall -Wextra -Werror -I ./libft -MMD -MP
 # _____________________  SRCS  __________________________
 
 # libft files
@@ -10,7 +11,7 @@ LIBFT_H = libft.h
 LIBFT_L = ft
 
 # libft dir
-LIBFT_DIR = libft/
+LIBFT_DIR = libft
 
 # p_swap file
 
@@ -60,39 +61,34 @@ DEPS = $(addprefix $(DEPS_DIR), $(SRCS:.c=.d))
 # Setting up an custom error message
 COMPIL_ERROR = "$(RED)[ERROR] Compilation failed$(RESET)"
 MISSING_FILE = "est manquant ou introuvable. Vérifiez que tous les fichiers source sont présents.\n"
-# Check source files
 
-.PHONY: all clean fclean re force $(LIBFT_A)
-all: print-banner check_sources $(NAME)
+.PHONY: all clean fclean re force
+all: print-banner $(LIBFT_DIR)
+	@$(MAKE) --no-print-directory $(NAME)
 
+# Print a banner
 print-banner:
 	@cols=$$(tput cols); \
 	printf '%*s\n' "$${cols}" '' | tr ' ' '='; \
 	echo "PUSH_SWAP !"; \
 	printf '%*s\n' "$${cols}" '' | tr ' ' '='
 
-check_sources:
-	@for file in $(SRCS); do \
-		if [ ! -f $$file ]; then \
-			printf "$(RED)[ERROR] Le fichier $$file "$(MISSING_FILE)" $(RESET)"; \
-		fi; \
-	done
+
+.PHONY: $(LIBFT_DIR)
+$(LIBFT_DIR):
+	@$(MAKE) --no-print-directory -C $@
 
 # Compile the object files
-$(OBJS_DIR)%.o: %.c Makefile
+$(OBJS_DIR)%.o: %.c 
 	@mkdir -p $(dir $@)
 	@printf "$(BLUE)$(notdir $@) $(RESET)"
-	@$(CC) $(CFLAGS) -I $(INC_DIR) $< -c -o $@ && echo "$(GREEN)>>> SU$(CC)ESS $(RESET)" || { echo "$(ERROR_MSG)"; exit 1; }
+	@$(CC) $(CFLAGS) -I $(INC_DIR) $< -c -o $@ && echo "$(GREEN)>>> SUCCESS $(RESET)" || { echo "$(ERROR_MSG)"; exit 1; }
+-include $(OBJECT:.o=.d)
 
 # Create lib with ar rc
-${NAME}: check_sources $(LIBFT_A) ${OBJS} 
-	@$(CC) ${CFLAGS} ${OBJS} -L libft -l $(LIBFT_L) -o $(NAME) || { echo "$(ERROR_MSG)"; exit 1; }
-	@echo "$(GREEN)=============== All push_swap function has been compiled ===============$(RESET)"
-
-# Get libft``
-$(LIBFT_A): force
-	@printf "$(YELLOW)1/  Building libft...........................................\n$(RESET)"
-	@$(MAKE) -C $(LIBFT_DIR) --no-print-directory || @printf "Issue while attempting compiling libft"
+$(NAME): $(OBJS) $(LIBFT_DIR)/$(LIBFT_A)
+	@$(CC) $(CFLAGS) -o $@ $(OBJS) -L$(LIBFT_DIR) -lft
+	@echo "$(GREEN)=============== All Fractol function has been compiled ===============$(RESET)"
 
 # Use to force libft to relink if something has changed within
 force:
@@ -100,11 +96,11 @@ force:
 # Clean it all up
 clean:
 	@$(MAKE) -C $(LIBFT_DIR) --no-print-directory clean
-	@rm -rf $(OBJS_DIR) $(DEPS_DIR) && echo "$(YELLOW)=============== All object files has been removed ===============$(RESET)"
+	@rm -rf $(OBJS_DIR) && echo "$(YELLOW)=============== All object files has been removed ===============$(RESET)"
 
 fclean: clean
 	@$(MAKE) -C $(LIBFT_DIR) --no-print-directory fclean
-	@rm -f  $(NAME) && echo "$(YELLOW)=============== $(NAME) has been removed ===============$(RESET)"
+	@rm -rf $(NAME) && echo "$(YELLOW)=============== $(NAME) has been removed ===============$(RESET)"
 
 re: fclean all
 

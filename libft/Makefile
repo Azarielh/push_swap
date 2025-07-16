@@ -98,7 +98,6 @@ $(OBJS_DIR)%.o: %.c Makefile
 # Create lib with ar rc
 ${NAME}: check_sources ${OBJS}
 	@ar rc ${NAME} ${OBJS} || { echo "$(ERROR_MSG)"; exit 1; }
-	@echo "$(GREEN)======================= All libft function has been compiled =======================$(RESET)"
 
 # Clean it all up
 clean:
@@ -107,7 +106,6 @@ fclean: clean
 	@rm -rf  $(NAME)
 
 re: fclean all
-	@echo "$(GREEN)======================= $(NAME) has been recompiled =======================$(RESET)"
 
 # ________________ Color codes ________________________
 
