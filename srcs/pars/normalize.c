@@ -21,7 +21,7 @@ int	normalize(t_piles *piles)
 
 	temp = malloc(sizeof(int) * piles->maxlen);
 	if (!temp)
-		return (exit_error("normalize: malloc failed", piles));
+		return (exit_error(piles));
 	i = -1;
 	while (++i < piles->len_a)
 		temp[i] = piles->pile_a[i];

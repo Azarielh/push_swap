@@ -14,14 +14,20 @@
 
 void	sort_four(t_piles *piles)
 {
-	int	min_pos ;
+	int	min_pos;
 
 	min_pos = get_lowest_pos(piles);
-	if (min_pos == 1)
-		rotate_a(piles, TRUE);
-	else if (min_pos == 2 || min_pos == 3)
-		while (min_pos++ < piles->len_a)
+	if (min_pos <= 1)
+	{
+		while (min_pos-- > 0)
+			rotate_a(piles, TRUE);
+	}
+	else
+	{
+		int count = piles->len_a - min_pos;
+		while (count-- > 0)
 			reverse_rotate_a(piles, TRUE);
+	}
 	push_b(piles, TRUE);
 	sort_three(piles);
 	push_a(piles, TRUE);

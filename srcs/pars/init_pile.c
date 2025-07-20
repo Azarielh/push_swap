@@ -22,14 +22,12 @@ int	init_pile(char **args, t_piles *piles, int argc)
 	piles->pile_a = malloc(sizeof(int) * argc + 1);
 	piles->pile_b = malloc(sizeof(int) * argc + 1);
 	if (piles->pile_a == NULL || piles->pile_b == NULL)
-		exit_error("malloc", piles);
+		exit_error(piles);
 	i = 0;
 	while (i < argc)
 	{
 		piles->pile_a[i] = ft_atoi(args[i]);
 		i++;
 	}
-	piles->max = get_highest_pos(piles);
-	piles->min = get_lowest_pos(piles);
 	return (0);
 }

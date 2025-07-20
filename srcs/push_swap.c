@@ -17,15 +17,16 @@ int	main(int argc, char **pile_base)
 	t_piles	piles;
 
 	if (argc < 2)
-		exit_error("arguments", &piles);
+		exit(0);
 	if (argc < 3)
-		exit_error("Need at least 2 args", &piles);
+		exit_error(&piles);
 	if (!is_valid_int_list(pile_base, argc))
-		exit_error("Error\n", &piles);
+		exit_error(&piles);
 	init_pile(pile_base + 1, &piles, argc - 1);
 	if (!is_sorted(&piles))
 		exception_handler(argc, &piles);
 	free(piles.pile_a);
-	free(piles.pile_b);
+	free(piles.pile_b); 
+	
 	return (EXIT_SUCCESS);
 }

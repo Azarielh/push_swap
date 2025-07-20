@@ -52,7 +52,7 @@ int		is_sorted(t_piles *piles);
 int		init_pile(char **args, t_piles *piles, int argc);
 void	print_pile_a(t_piles *piles);
 void	print_pile_b(t_piles *piles);
-int		exit_error(char *error_msg, t_piles *piles);
+int		exit_error(t_piles *piles);
 int		normalize(t_piles *pile);
 void	exception_handler(int argc, t_piles *piles);
 int		get_lowest_pos(t_piles *piles);
