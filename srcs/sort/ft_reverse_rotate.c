@@ -21,9 +21,10 @@ void	reverse_rotate_a(t_piles *piles, int do_print)
 	len = piles->len_a;
 	first = piles->pile_a[0];
 	last = piles->pile_a[len - 1];
-	while (first != last && len-- > 0)
+	while (first != last && len >= 0)
 	{
-		piles->pile_a[len] = piles->pile_a[len];
+		piles->pile_a[len] = piles->pile_a[len - 1];
+		len--;
 	}
 	piles->pile_a[0] = last;
 	if (do_print == TRUE)
@@ -41,7 +42,7 @@ void	reverse_rotate_b(t_piles *piles, int do_print)
 	last = piles->pile_b[len - 1];
 	while (first != last && len-- > 0)
 	{
-		piles->pile_b[len] = piles->pile_b[len];
+		piles->pile_b[len] = piles->pile_b[len - 1];
 	}
 	piles->pile_b[0] = last;
 	if (do_print == TRUE)

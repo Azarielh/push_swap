@@ -16,17 +16,15 @@ void	sort_three(t_piles *piles)
 {
 	int	h_pos;
 	int	l_pos;
-	ft_printf("sort_three\n");
-	if (is_sorted(piles))
-		return ;
+	// ft_printf("sort_three\n");
 	h_pos = get_highest_pos(piles);
 	l_pos = get_lowest_pos(piles);
-	ft_printf("h_pos: %d, l_pos: %d\n", h_pos, l_pos);
+	// ft_printf("h_pos: %d, l_pos: %d\n", h_pos, l_pos);
 	if (l_pos == 0 && h_pos == 1)
 	{
 		swap_a(piles, TRUE);
 		rotate_a(piles, TRUE);
-	}	
+	}
 	else if (l_pos == 1 && h_pos == 2)
 		swap_a(piles, TRUE); // Cas A
 	if (l_pos == 2 && h_pos == 1)
@@ -38,10 +36,11 @@ void	sort_three(t_piles *piles)
 		rotate_a(piles, TRUE);
 		swap_a(piles, TRUE);
 	}
-		if (is_sorted(piles))
+	if (is_sorted(piles))
 	{
 		while (piles->len_a < piles->maxlen)
 			push_a(piles, TRUE);
 		return ;
 	}
 }
+// 

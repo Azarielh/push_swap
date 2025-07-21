@@ -27,6 +27,5 @@ int	main(int argc, char **pile_base)
 		exception_handler(argc, &piles);
 	free(piles.pile_a);
 	free(piles.pile_b); 
-	
 	return (EXIT_SUCCESS);
 }
