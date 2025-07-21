@@ -22,7 +22,7 @@ void	exception_handler(int argc, t_piles *piles)
 	else if (argc == 4)
 		sort_four(piles);
 	else if (argc == 5)
-		sort_five(piles, piles->pile_a);
+		sort_five(piles);
 	else if (argc > 5)
 		radix_sort(piles);
 }

@@ -60,7 +60,7 @@ int		get_highest_pos(t_piles *piles);
 void	sort(t_piles *piles);
 void	sort_three(t_piles *piles);
 void	sort_four(t_piles *piles);
-void	sort_five(t_piles *piles, int *p_a);
+void	sort_five(t_piles *piles);
 void	swap_a(t_piles *piles, int do_print);
 void	swap_b(t_piles *piles, int do_print);
 void	double_swap(t_piles *piles);
