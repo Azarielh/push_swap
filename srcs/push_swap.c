@@ -6,7 +6,7 @@
 /*   By: jlacaze <jlacaze-@student.42lyon.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 19:34:51 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/21 21:55:12 by jlacaze          ###   ########.fr       */
+/*   Updated: 2025/07/21 23:20:12 by jlacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int	main(int argc, char **pile_base)
 	if (!is_sorted(&piles))
 		exception_handler(argc, &piles);
 	free(piles.pile_a);
-	free(piles.pile_b); 
+	free(piles.pile_b);
 	return (EXIT_SUCCESS);
 }

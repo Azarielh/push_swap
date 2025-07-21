@@ -6,7 +6,7 @@
 /*   By: jlacaze <jlacaze-@student.42lyon.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 01:06:47 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/16 21:51:08 by jlacaze          ###   ########.fr       */
+/*   Updated: 2025/07/21 23:23:19 by jlacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	sort_four(t_piles *piles)
 {
 	int	min_pos;
+
 	min_pos = get_lowest_pos(piles);
 	if (min_pos <= 1)
 	{
