@@ -18,8 +18,7 @@ int	exit_error(t_piles *piles)
 	{
 		free(piles->pile_a);
 		free(piles->pile_b);
-		ft_putendl_fd("Error", 2);
-		exit (EXIT_FAILURE);
 	}
-	exit (0);
+	ft_putendl_fd("Error", 2);
+	exit (EXIT_FAILURE);
 }
