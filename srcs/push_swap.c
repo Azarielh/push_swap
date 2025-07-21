@@ -6,7 +6,7 @@
 /*   By: jlacaze <jlacaze-@student.42lyon.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 19:34:51 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/16 21:50:44 by jlacaze          ###   ########.fr       */
+/*   Updated: 2025/07/21 21:55:12 by jlacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	main(int argc, char **pile_base)
 {
 	t_piles	piles;
 
+	ft_bzero(&piles, sizeof(piles));
 	if (argc < 2)
 		exit(0);
 	if (argc < 3)

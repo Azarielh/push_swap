@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   is_valid_int_list.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlacaze- <jlacaze-@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: jlacaze <jlacaze-@student.42lyon.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 23:48:24 by jlacaze-          #+#    #+#             */
-/*   Updated: 2025/07/06 13:26:53 by jlacaze-         ###   ########.fr       */
+/*   Updated: 2025/07/21 22:06:03 by jlacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,15 @@ int	is_valid_int_list(char **pile_base, int argc)
 	while (i < argc)
 	{
 		if (ft_isnumber(pile_base[i]) == 0)
-			return (exit_error(NULL));
+		{
+			ft_putendl_fd("Error", 2);
+			exit (1);
+		}
 		if (ft_isnumber(pile_base[i]) == 1 && is_valid_int(pile_base[i]) == 0)
-			return (exit_error(NULL));
+		{
+			ft_putendl_fd("Error", 2);
+			exit (1);
+		}
 		i++;
 	}
 	if (!has_no_double(pile_base))
